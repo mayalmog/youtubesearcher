@@ -10,8 +10,9 @@ export const SearchBar = () => {
     setSearchQuery(value);
   };
 
-  const getResults = async () => {
-    const results = await httpService.youTubeSearch(searchQuery);
+  const getResults = async (ev) => {
+    ev.preventDefault();
+    const results = await httpService.getYouTubeResults(searchQuery);
     setResults(results);
   };
 

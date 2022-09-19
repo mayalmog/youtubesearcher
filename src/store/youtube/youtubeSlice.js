@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { youtubeService } from "../../services/desk.service";
+import { httpService } from "../../service/http.service";
 
 export const deskSlice = createSlice({
   name: "youtube",
@@ -8,34 +8,15 @@ export const deskSlice = createSlice({
     results: [],
   },
   reducers: {
-    setWeeks: (state) => {
-      state.weeks = deskService.getWeeks();
+    setQuery: (state, action) => {
+      state.query = action.payload;
     },
-
-    setWeek: (state, action) => {
-      state.week = deskService.getWeekByStartDate(action.payload);
-    },
-
-    bookDesk: (state, action) => {
-      const updatedWeek = deskService.bookDesk(
-        state.week,
-        action.payload.currDay,
-        action.payload.updatedDesk
-      );
-      state.week = updatedWeek;
-    },
-
-    cancelBooking: (state, action) => {
-      const updatedWeek = deskService.getCancelledBooking(
-        state.week,
-        action.payload.currDay,
-        action.payload.desk
-      );
-      state.week = updatedWeek;
+    setResults: (state) => {
+      state.results = httpService.getYouTubeResults();
     },
   },
 });
 
-// export const { setWeeks, setWeek, bookDesk, cancelBooking } = youtube.actions;
+export const { setQuery, setResults } = youtube.actions;
 
 export default youtube.reducer;
