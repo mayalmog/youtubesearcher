@@ -1,0 +1,18 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 10px 0;
+  button {
+    font-weight: bold;
+    border: none;
+    color: rgb(174, 174, 174);
+    padding: 11px;
+    border-radius: 5px;
+    cursor: pointer;
+    &.active {
+      color: black;
+    }
+  }
+}

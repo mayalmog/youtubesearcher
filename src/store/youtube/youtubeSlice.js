@@ -5,18 +5,21 @@ export const youtubeSlice = createSlice({
   initialState: {
     query: "",
     results: [],
+    page: 1,
   },
   reducers: {
     setQuery: (state, action) => {
       state.query = action.payload.searchQuery;
     },
     setResults: (state, action) => {
-      console.log("payload: ", action.payload);
       state.results = action.payload;
+    },
+    setPage: (state, action) => {
+      state.page = action.payload.pageNum;
     },
   },
 });
 
-export const { setQuery, setResults } = youtubeSlice.actions;
+export const { setQuery, setResults, setPage } = youtubeSlice.actions;
 
 export default youtubeSlice.reducer;

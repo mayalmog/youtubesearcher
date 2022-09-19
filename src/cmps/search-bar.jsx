@@ -20,7 +20,6 @@ export const SearchBar = () => {
     ev.preventDefault();
     dispatch(setQuery({ searchQuery }));
     const results = await httpService.getYouTubeResults(searchQuery);
-    console.log("results: ", results);
     dispatch(setResults(results));
   };
 

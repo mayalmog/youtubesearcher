@@ -9,7 +9,7 @@ export const httpService = {
 async function getYouTubeResults(query) {
   try {
     const res = await axios.get(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${API_KEY}`
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=${API_KEY}`
     );
     return res.data.items;
   } catch (err) {

@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# YouTubeSearcher
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project you can search using the input from any string query, and get back YouTube videos results using API.
 
 ## Available Scripts
 
