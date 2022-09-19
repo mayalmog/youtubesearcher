@@ -11,7 +11,7 @@ async function getYouTubeResults(query) {
     const res = await axios.get(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${query}&key=${API_KEY}`
     );
-    return res.data;
+    return res.data.items;
   } catch (err) {
     throw err;
   }

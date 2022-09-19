@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { httpService } from "../service/http.service";
 import { setQuery, setResults } from "../store/youtube/youtubeSlice";
 
 export const SearchBar = () => {
-  const currQuery = useSelector((state) => state.youtube.query);
+  // const currQuery = useSelector((state) => state.youtube.query);
   // const currResults = useSelector((state) => state.youtube.results);
   const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState(null);
