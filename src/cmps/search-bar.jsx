@@ -31,6 +31,7 @@ export const SearchBar = () => {
           className="form-control"
           type="text"
           name="search"
+          placeholder="Search"
           onChange={handleChange}
         />
         <button type="submit" onClick={getResults}>
@@ -38,7 +39,6 @@ export const SearchBar = () => {
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </span>
         </button>
-        {/* <input type="submit" value="Submit" onClick={getResults} /> */}
       </form>
     </section>
   );

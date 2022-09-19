@@ -1,7 +1,5 @@
 import { Item } from "semantic-ui-react";
-import { Link } from "react-router-dom";
 
-// https://www.youtube.com/watch?v=z8YxxJEBgHk
 export const ResultPreview = ({ result }) => {
   return (
     <li className="result-preview">
