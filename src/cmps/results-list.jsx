@@ -9,7 +9,7 @@ export const ResultsList = () => {
     <section className="results-list">
       <ul>
         {currResults
-          .slice((currPage - 1) * 5, currPage * 5)
+          .slice((currPage - 1) * 10, currPage * 10)
           .map((result, idx) => {
             return <ResultPreview key={idx} result={result} />;
           })}
