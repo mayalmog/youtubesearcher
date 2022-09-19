@@ -1,20 +1,15 @@
 import { Item } from "semantic-ui-react";
 
-const ResultPreview = ({ result }) => {
+export const ResultPreview = ({ result }) => {
   return (
-    <li
-      className="result-preview"
-      onClick={() => setCurrentVideo(result.id.videoId)}
-    >
+    <li className="result-preview">
       <Item.Group>
         <Item>
           <Item.Image size="tiny" src={result.snippet.thumbnails.default.url} />
 
           <Item.Content>
             <Item.Header as="a">{result.snippet.title}</Item.Header>
-            <Item.Meta className={theme}>
-              {result.snippet.description}
-            </Item.Meta>
+            <Item.Meta>{result.snippet.description}</Item.Meta>
           </Item.Content>
         </Item>
       </Item.Group>

@@ -14,3 +14,5 @@ export const ResultsList = () => {
     </section>
   );
 };
+
+export default ResultsList;
