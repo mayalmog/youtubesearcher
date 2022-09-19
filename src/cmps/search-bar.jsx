@@ -19,7 +19,7 @@ export const SearchBar = () => {
   const getResults = async (ev) => {
     ev.preventDefault();
     dispatch(setQuery({ searchQuery }));
-    const results = await httpService.getYouTubeResults(searchQuery);
+    const results = await httpService.getYouTubeResultsWithRating(searchQuery);
     dispatch(setResults(results));
   };
 

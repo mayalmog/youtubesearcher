@@ -14,6 +14,7 @@ export const ResultPreview = ({ result }) => {
             <Item.Content>
               <Item.Header>{result.snippet.title}</Item.Header>
               <Item.Meta>{result.snippet.description}</Item.Meta>
+              <Item.Meta>Likes: {result.rating}</Item.Meta>
             </Item.Content>
           </Item>
         </Item.Group>

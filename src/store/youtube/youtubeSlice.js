@@ -12,7 +12,7 @@ export const youtubeSlice = createSlice({
       state.query = action.payload.searchQuery;
     },
     setResults: (state, action) => {
-      state.results = action.payload;
+      state.results = action.payload.sort((a, b) => b.rating - a.rating);
     },
     setPage: (state, action) => {
       state.page = action.payload.pageNum;
