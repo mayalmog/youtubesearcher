@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { httpService } from "../../service/http.service";
+// import { httpService } from "../../service/http.service";
 
 // const initialState = {
-//   entities: [],
+//   query: "",
+//   results: [],
 //   loading: false,
 // };
 
@@ -10,10 +11,9 @@ import { httpService } from "../../service/http.service";
 //   //action type string
 //   "youtube/getYouTubeResults",
 //   // callback function
-//   async (thunkAPI) => {
-//     const res = await fetch("https://jsonplaceholder.typicode.com/posts").then(
-//       (data) => data.json()
-//     );
+//   async () => {
+//     const res = await httpService.getYouTubeResults(youtubeSlice.query);
+//     console.log(res);
 //     return res;
 //   }
 // );
@@ -26,30 +26,27 @@ export const youtubeSlice = createSlice({
   },
   reducers: {
     setQuery: (state, action) => {
-      state.query = action.payload;
+      state.query = action.payload.searchQuery;
     },
-    setResults: (state) => {
-      state.results = httpService.getYouTubeResults();
+    setResults: (state, action) => {
+      console.log("payload: ", action.payload);
+      state.results = action.payload;
     },
   },
+  // extraReducers: {
+  //   [getYouTubeResults.pending]: (state) => {
+  //     state.loading = true;
+  //   },
+  //   [getYouTubeResults.fulfilled]: (state, { payload }) => {
+  //     state.loading = false;
+  //     state.results = payload;
+  //   },
+  //   [getYouTubeResults.rejected]: (state) => {
+  //     state.loading = false;
+  //   },
+  // },
 });
 
 export const { setQuery, setResults } = youtubeSlice.actions;
 
 export default youtubeSlice.reducer;
-
-// export const deskSlice = createSlice({
-//   name: "youtube",
-//   initialState: {
-//     query: "",
-//     results: [],
-//   },
-//   reducers: {
-//     setQuery: (state, action) => {
-//       state.query = action.payload;
-//     },
-//     setResults: (state) => {
-//       state.results = httpService.getYouTubeResults();
-//     },
-//   },
-// });
