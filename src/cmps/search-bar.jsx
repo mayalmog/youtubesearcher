@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import { httpService } from "../service/http.service";
 import { setQuery, setResults } from "../store/youtube/youtubeSlice";
@@ -25,10 +27,18 @@ export const SearchBar = () => {
   return (
     <section className="search-bar">
       <form>
-        <label>
-          <input type="text" name="search" onChange={handleChange} />
-        </label>
-        <input type="submit" value="Submit" onClick={getResults} />
+        <input
+          className="form-control"
+          type="text"
+          name="search"
+          onChange={handleChange}
+        />
+        <button type="submit" onClick={getResults}>
+          <span>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </span>
+        </button>
+        {/* <input type="submit" value="Submit" onClick={getResults} /> */}
       </form>
     </section>
   );
